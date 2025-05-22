@@ -4,7 +4,7 @@
 불법 주정차 단속을 위한 **지능형 로봇 시스템** 개발 프로젝트입니다.  
 순찰 로봇과 견인 로봇이 협력하여 **24시간 단속 및 즉각 대응**이 가능한 자동화 시스템을 구현했습니다.
 
-![프로젝트 로고 또는 이미지](https://via.placeholder.com/600x200?text=Do+Not+Park+Robot)
+![프로젝트 로고 또는 이미지](https://4-3zw8745.slack.com/files/U08RPJVQ936/F08T2FWN8TF/assets_task_01jvp63w5tfpzb43xr0svww9aq_1747722637_img_1.webp)
 
 ## 📌 프로젝트 개요
 
