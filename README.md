@@ -54,7 +54,7 @@
 
 ## 🎥 시연 영상
 
-> 프로젝트 시연 영상은 [여기에서 확인](https://example.com)하실 수 있습니다.
+> 프로젝트 시연 영상은 [여기에서 확인](https://www.youtube.com/shorts/tp9fruPbt54)하실 수 있습니다.
 
 ## 📊 성과
 
