@@ -41,7 +41,7 @@
 | **AI 모델**     | YOLOv8, Depth Camera                         |
 | **로봇 플랫폼** | TurtleBot4 (ROS 2 기반)                     |
 | **프레임워크**   | ROS 2, Nav2, TF2, OpenCV, Python            |
-| **학습환경**    | Ubuntu 22.04, Foxy, Jetson, VS Code         |
+| **학습환경**    | Ubuntu 22.04,  VS Code                       |
 
 ## 📦 주요 기능
 
@@ -78,13 +78,21 @@
 
 ```
 ROBOT_PROJECT/
-├── patrol_bot/            # 순찰 로봇
-├── tow_bot/               # Image
-├── yolo_detector/         # camera_config
-├── launch/                # map_config
-├── config/                # nav_config
-└── README.md
+├── patrol_bot/
+│   ├── Image/
+│   ├── camera_config/
+│   ├── map_config/
+│   ├── nav_config/
+│   ├── sub_move.py
+│   └── last_car_tf_pub.py
+├── tow_bot/
+│   └── final_gyenin.py
 ```
+### 주요 파일 설명
+
+- `tow_bot/final_gyenin.py` : 견인 로봇 메인 제어 스크립트
+- `patrol_bot/sub_move.py` : 순찰 로봇 이동 제어 스크립트
+- `patrol_bot/last_car_tf_pub.py` : 마지막 차량 위치 TF 발행
 
 ## 🧠 배운 점 & 아쉬운 점
 
