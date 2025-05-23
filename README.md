@@ -83,16 +83,16 @@ ROBOT_PROJECT/
 │   ├── camera_config/
 │   ├── map_config/
 │   ├── nav_config/
-│   ├── sub_move.py
-│   └── last_car_tf_pub.py
+│   ├── sub_move.py *
+│   └── last_car_tf_pub.py *
 ├── tow_bot/
-│   └── final_gyenin.py
+│   └── final_gyenin.py *
 ```
 ### 주요 파일 설명
 
 - `tow_bot/final_gyenin.py` : 견인 로봇 메인 제어 스크립트
 - `patrol_bot/sub_move.py` : 순찰 로봇 이동 제어 스크립트
-- `patrol_bot/last_car_tf_pub.py` : 마지막 차량 위치 TF 발행
+- `patrol_bot/last_car_tf_pub.py` : 불법주차 차량 감지 스크립트
 
 ## 🧠 배운 점 & 아쉬운 점
 
