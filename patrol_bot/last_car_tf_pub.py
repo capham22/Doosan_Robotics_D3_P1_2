@@ -1,7 +1,8 @@
 import rclpy  # ROS2 Python 클라이언트 라이브러리
 from rclpy.node import Node  # ROS2 노드 베이스 클래스
 from rclpy.executors import MultiThreadedExecutor  # 멀티스레드 실행기
-from rclpy.qos import qos_profile_sensor_data
+# from rclpy.qos import qos_profile_sensor_data
+# 통신 신뢰용
 from sensor_msgs.msg import Image, CameraInfo  # ROS2 이미지 메시지 타입
 from cv_bridge import CvBridge  # ROS 이미지 :양방향_화살표: OpenCV 변환 브리지
 import cv2  # OpenCV 라이브러리
@@ -13,7 +14,6 @@ import threading  # 파이썬 스레딩
 from ultralytics import YOLO  # YOLO 객체 감지 모델
 from geometry_msgs.msg import PointStamped
 import tf2_ros
-import tf2_geometry_msgs
 import rclpy.duration
 from visualization_msgs.msg import Marker
 
@@ -23,8 +23,8 @@ from visualization_msgs.msg import Marker
 # ================================
 MODEL_PATH = '/home/moonseungyeon/Downloads/11n_100picpt.pt'      # YOLO 모델 파일 경로
 RGB_TOPIC = '/robot2/oakd/rgb/preview/image_raw'       # RGB 이미지 토픽
-DEPTH_TOPIC = '/robot2/oakd/stereo/image_raw'
-CAMERA_INFO_TOPIC = '/robot2/oakd/stereo/camera_info'
+DEPTH_TOPIC = '/robot2/oakd/stereo/image_raw'          # depth 토픽
+CAMERA_INFO_TOPIC = '/robot2/oakd/stereo/camera_info'  # 카메라 관련 정보
 TARGET_CLASS_ID = 0                                    # 관심 객체 클래스 ID (0=자동차)
 NORMALIZE_DEPTH_RANGE = 3.0                            # 깊이 정규화 범위 (m)
 INTRUSION_THRESHOLD = 0.10                             # 침범 판단 임계치 (10%)
@@ -59,7 +59,7 @@ class YoloDepthGreenDetector(Node):
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer, self)
         self.marker_pub = self.create_publisher(Marker, 'detected_objects_marker', 10)
         self.marker_id = 0
-        # 퍼블리셔 추가
+        # 오브젝트 좌표 퍼블리셔 추가
         self.coord_pub = self.create_publisher(PointStamped, 'detected_object_position', 10)
 
 
@@ -213,8 +213,7 @@ class YoloDepthGreenDetector(Node):
                     pt_camera.point.y = y
                     pt_camera.point.z = z
 
-
-                    # ✅ 이 아래에 추가
+                    # tf 자동변환 (공식 메서드)
                     try:
                         pt_map = self.tf_buffer.transform(
                             pt_camera, 'map', timeout=rclpy.duration.Duration(seconds=0.5)
@@ -229,7 +228,6 @@ class YoloDepthGreenDetector(Node):
                         # ✅ RViz 마커 발행
                         self.publish_marker(map_x, map_y, map_z)
                     
-                       
                     except Exception as e:
                         self.get_logger().warn(f"[TF] map 기준 변환 실패: {e}")
 
@@ -269,7 +267,7 @@ class YoloDepthGreenDetector(Node):
         else:
             cv2.imshow("YOLO+Depth+GreenMask", rgb_img)
 
-
+# 박스는 그대로고, 초록 감지 영역만 수학적으로 바꿔서 계산- 따라서 뎁스랑, 박스위치는 변하지 않음
 def ros_spin_thread(node):
     executor = MultiThreadedExecutor()
     executor.add_node(node)
@@ -277,7 +275,6 @@ def ros_spin_thread(node):
         executor.spin()
     finally:
         node.destroy_node()
-
 
 def main():
     rclpy.init()
