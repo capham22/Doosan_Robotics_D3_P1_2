@@ -77,12 +77,12 @@
 ## 📂 프로젝트 구조 예시
 
 ```
-roadkeeper/
-├── patrol_bot/            # 순찰 로봇 패키지
-├── tow_bot/               # 견인 로봇 패키지
-├── yolo_detector/         # YOLO + Depth 처리 노드
-├── launch/                # 전체 시스템 런치 파일
-├── config/                # 파라미터 설정
+ROBOT_PROJECT/
+├── patrol_bot/            # 순찰 로봇
+├── tow_bot/               # Image
+├── yolo_detector/         # camera_config
+├── launch/                # map_config
+├── config/                # nav_config
 └── README.md
 ```
 
