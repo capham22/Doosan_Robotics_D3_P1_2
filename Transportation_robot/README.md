@@ -79,14 +79,14 @@
 ```
 ROBOT_PROJECT/
 ├── patrol_bot/
-│   ├── Image/
-│   ├── camera_config/
-│   ├── map_config/
-│   ├── nav_config/
 │   ├── sub_move.py *
 │   └── last_car_tf_pub.py *
 ├── tow_bot/
 │   └── final_gyenin.py *
+├── Image/
+├── camera_config/
+├── map_config/
+├── nav_config/
 ```
 ### 주요 파일 설명
 
