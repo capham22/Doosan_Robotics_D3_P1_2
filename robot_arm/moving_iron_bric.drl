@@ -95,6 +95,7 @@ while gLoop182237973 < 1:
         msg = rx_data.decode()
         server_socket_close(sock)
         try:
+            # Vision으로부터 받은 문자열을 정수 리스트로 변환
             height_labels = [int(v.strip()) for v in msg.split(",")]
         except:
             tp_popup(":경고: 형식 오류: " + msg, DR_PM_ALARM)
@@ -102,6 +103,8 @@ while gLoop182237973 < 1:
         if len(height_labels) != 9:
             tp_popup(":경고: 정수 9개 필요. 수신: " + str(height_labels), DR_PM_ALARM)
             return
+        
+        # 라벨별로 카운터 초기화 (길이 0,1,2인 브릭이 각각 몇 개인지 추적)
         label_counts = {0: 0, 1: 0, 2: 0}
         for i in range(9):
             src_pos = source_pallet[i]
