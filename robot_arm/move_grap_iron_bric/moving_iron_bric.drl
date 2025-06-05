@@ -3,10 +3,7 @@
 
 # 그리퍼 닫기 함수 (철 브릭 잡기)
 def grasp():
-    global System_moon
     global System_home
-    global System_0_0
-    global System_0_1
     # SetNode
     set_digital_output(1,ON)
     # SetNode
@@ -18,10 +15,7 @@ _alias_sub_name_grasp = grasp
 
 # 그리퍼 열기 함수 (철 브릭 놓기)
 def release():
-    global System_moon
     global System_home
-    global System_0_0
-    global System_0_1
     # SetNode
     set_digital_output(1,OFF)
     # SetNode
