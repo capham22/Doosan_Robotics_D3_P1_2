@@ -29,7 +29,6 @@ def main(args=None):
             set_tcp,
             set_digital_output,
             wait,
-            get_current_posj,
             DR_AXIS_Z,
             DR_BASE,
             DR_TOOL,

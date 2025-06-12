@@ -20,8 +20,8 @@ def main(args=None):
     DR_init.__dsr__id     = ROBOT_ID
     DR_init.__dsr__model  = ROBOT_MODEL
 
-    from DSR_ROBOT2 import amovej, movej, DR_Error, wait, get_tool_force, movel
-    from DSR_ROBOT2 import task_compliance_ctrl, get_current_pose, release_compliance_ctrl, release_force
+    from DSR_ROBOT2 import amovej, DR_Error, wait, get_tool_force
+    from DSR_ROBOT2 import task_compliance_ctrl, get_current_pose, release_compliance_ctrl
     from DSR_ROBOT2 import ROBOT_SPACE_TASK
 
     try:

@@ -20,21 +20,15 @@ def main(args=None):
 
     try:
         from DSR_ROBOT2 import (
-            release_compliance_ctrl,
-            check_force_condition,
-            task_compliance_ctrl,
-            set_desired_force,
             set_tool,
             set_tcp,
             movej,
             movel,
-            DR_FC_MOD_REL,
-            DR_AXIS_Z,
+
             DR_BASE,
             set_digital_output,
             wait,
-            get_current_posx,
-            release_force,
+
             get_tool_force,
         )
         from DR_common2 import posx

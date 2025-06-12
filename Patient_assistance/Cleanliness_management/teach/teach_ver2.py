@@ -16,7 +16,7 @@ def main(args=None):
     DR_init.__dsr__id     = ROBOT_ID
     DR_init.__dsr__model  = ROBOT_MODEL
 
-    from DSR_ROBOT2 import get_current_posj, movej, release_compliance_ctrl, task_compliance_ctrl, DR_Error
+    from DSR_ROBOT2 import get_current_posj, release_compliance_ctrl, task_compliance_ctrl, DR_Error
 
     release_compliance_ctrl()
     #start_joint = [1.81, 13.67, 64.42, -0.01, 54.83, 0.00]  # ← 여기만 수정하면 됨
