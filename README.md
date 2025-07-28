@@ -9,13 +9,6 @@
 | 🚗 **도로지킴이** | 불법 주정차 차량을 탐지하고 자동으로 대응하는 자율 로봇 시스템 | YOLO, ROS 2, TF2, Nav2 |
 | 🦾 **요양보조로봇** | 요양 업무 종사자 협동 로봇 팔 | YOLO, ROS 2, TF2, Doosanrobot api |
 
-## 🗺️ 폴더 구조 개요
-
-ROBOT_PROJECT/
-├── Transportation_robot
-├── Patient_assistance
-└── README.md # 통합 대문 
-
 ## 🛠 기술 스택
 
 | 분류        | 기술 구성                        |
