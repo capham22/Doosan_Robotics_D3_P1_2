@@ -15,7 +15,7 @@
 |-------------|----------------------------------|
 | **프레임워크** | ROS 2 (humble), OpenCV, Python |
 | **AI 모델**   | YOLOv8                         |
-| **환경**     | Ubuntu 22.04, VS Code           |
+| **환경**     | Ubuntu 22.04            |
 | **하드웨어** | TurtleBot4, Doosan-m0609, Depth Camera|
 
 > 각 프로젝트 폴더 내에 있는 `README.md` 파일을 통해 상세 내용을 확인하실 수 있습니다.
